@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+  <head>
+    <title>Chore Door!</title>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css2?family=Modak&family=Roboto&display:300,400,500" rel="stylesheet"/>      
+
+  <style>
+
+@-webkit-keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
+        @keyframes move_eye { from { margin-left: -20%; } to { margin-left: 100%; }  }
+
+body {
+  font-family: 'Modak', sans-serif;
+  font-size: 18px;
+  background-color: #000000;
+  margin: 0px;
+  width: 1000px;
+  opacity: .9;  
+  }
+.header {
+  width: 900px;
+  font-family: 'Roboto', serif;
+  font-size: 2rem;    
+  box-shadow: inset 16px -4px 15px 10px #3947a1;
+  }
+.polling_message {
+  color: #603e72fc;
+  float: left;
+  width: 900px;
+  }
+.view_port {
+  background-color: #080d0db3;
+  height: 35px;
+  width: 100%;
+  text-align: center;
+  overflow: hidden;
+  }
+.cylon_eye {
+  background-color: #18b7cc;
+  background-image: linear-gradient(to right, rgba(0, 0, 0, 0.9) 25%, rgba(0, 0, 0, .1) 50%, rgba(0, 0, 0, 0.9) 75%);
+  color: white;
+  height: 100%;
+  width: 45%;
+  animation: 50s linear 0s infinite alternate move_eye;
+  }
+.link {
+  color: #950808;
+  text-decoration: underline blue;
+  font-family: 'Roboto', sans-serif;
+}
+.link:hover {
+  opacity: .2;
+  transition: all ease .9s;
+  color: white;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.title-row {
+  width: 900px;
+  margin: 0px;
+  display: flex;
+  padding-top: 5px;
+  }
+.title-row img {
+  width: 50px;
+  margin: auto;
+  padding-bottom: 15px;
+  }
+.instructions-title {
+  font-family: 'Modak', serif;
+  font-size: 1.7rem;
+  color: #950808;
+  margin: 5px 15px auto 15px
+  }
+.instructions-row{
+  margin: 0px;
+  width: 650px;
+  font-family: 'Roboto', sans-serif;
+  }
+.instructions-numbers{
+  font-size: 1rem;
+  color: white;
+  margin: 0px;
+  width: 1px;
+  opacity: .7;
+  }
+.instructions-text{
+  font-size: 1rem;
+  color: #4080C4;
+  margin: 0px;
+  width: 400px;
+  }
+.door-row{
+  text-align: center;
+  margin-top: 17px;
+  padding-right: 50px;
+  }
+.door-frame {
+  cursor: pointer;
+  padding: 8px;
+  transition: all linear;
+  box-shadow: 2px 7px 10px 14px #2e1f1f;
+  }
+.door-frame:hover {
+  cursor: cell;
+  opacity: .9;
+  }
+.door-frame:active {
+  margin-top: 2px;
+  margin-bottom: -2px;
+  box-shadow: 0px 2px 2px rgba(63, 63, 63, 0.1), 0px -2px 2px rgba(255, 255, 255, 0.25) inset, 0 2px 2px rgba(255, 255, 255, 0.4) inset;
+  background: #0c960c;
+  background: linear-gradient(#0c960c, #0ebc0e);
+  }
+#start-row {
+  font-family: 'Modak', sans-serif;
+  font-size: 1.2rem;
+  width: 125px;
+  height: 75px;
+  text-align: center;
+  margin: 0px auto 0px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 5px solid #023402;
+  border-radius: 5px;
+  color: #F8F8F8;
+  box-shadow: 0px 2px 2px rgb(153 36 36 / 20%), 0px -2px 2px rgba(255, 255, 255, 0.5) inset, 0 2px 2px rgba(255, 255, 255, 0.8) inset;
+  background: linear-gradient(#1D1, #030703);
+  text-shadow: 0 -2px #000000;
+  }
+#start-row:hover {
+  box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1), 0px -2px 2px rgba(255, 255, 255, 0.25) inset, 0 2px 2px rgba(255, 255, 255, 0.4) inset;
+  background: linear-gradient(#bc0e8c, #454634);
+  border-color: #ddc20a;
+  transition: all 5s ease 2s;
+  }
+#start-row:active {
+  margin-top: 2px;
+  margin-bottom: -2px;
+  box-shadow: 0px 2px 2px rgba(63, 63, 63, 0.1), 0px -2px 2px rgba(255, 255, 255, 0.25) inset, 0 2px 2px rgba(255, 255, 255, 0.4) inset;
+  background: #0c960c;
+  background: linear-gradient(#0c960c, #0ebc0e);
+  }
+.streak {
+  width: 250px;
+  height: 30px;
+  font-size: 1.5rem;
+  color: #db4242;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: blue;
+  }
+.streak:hover {
+  opacity: 1;
+  transition: all ease .9s;
+  color: white;
+  font-size: 1.9rem;
+  text-decoration: none;
+  }
+.streakHigh {
+  width: 250px;
+  height: 30px;
+  font-size: 1.4rem;
+  color: #db4242;
+  text-align: center;
+  text-decoration: underline;
+  text-decoration-color: blue;
+  }
+.streakHigh:hover {
+  transition: width 5s, height 2s, background-color 2s, transform 4s, color 5s;
+  background-color: white;
+  color: yellow;
+  border-radius: 90px;
+  width: 200px;
+  height: 200px;
+  transform: rotate(180deg);
+  font-size: 1.3rem;
+  max-height: 200px;
+  align-items: center;
+  z-index: .7;
+  display: flex;
+  text-decoration: none;
+  }
+.streakHigher {
+  font-family: 'Roboto', sans-serif;
+  width: 200px;
+  height: 0px;
+  font-size: 1.5rem;
+  color: white;
+  margin-left: -6rem;
+  text-decoration: underline;
+  text-decoration-color: blue;
+  }
+.streakHigher:hover {
+  transition: all 3s ease ;
+  font-family: 'Modak', cursive;
+  margin-left: 10px;
+  width: 900px;
+  height: 200px;
+  font-size: 5rem;
+  color: #db4242;
+  z-index: 1;
+  text-decoration: none;
+  }
+
+  </style>
+</head>
+
+<html>
+  <body> 
+    <section>
+      <div class= "header">
+        <div class="view_port">
+          <div class="polling_message">
+             Chore Door Game by Meee
+          </div>
+          <div class="cylon_eye"></div>
+        </div>
+      </div>
+    </section>  
+    <div class="link">
+      <a href="index.html" rel="noopener noreferrer" alt="home" title="Home Page">Go Back to Home Page</a>
+    </div>
+    <div>
+      <div class="title-row">
+        <img src="https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/star.svg"/>
+        <p class="instructions-title">Instructions:</p>
+        <table class="instructions-row">
+          <tr>
+            <td class="instructions-numbers">1</td>
+            <td class="instructions-text">Hiding behind one of these doors is the ChoreBot.</td>
+          </tr>
+          <tr> 
+            <td class="instructions-numbers">2</td>
+            <td class="instructions-text"> Your mission is to open all of the doors without running into the ChoreBot.</td>
+          </tr>
+          <tr> 
+          <td class="instructions-numbers">3</td>
+          <td class="instructions-text">If you manage to avoid the ChoreBot until you open the very last door, you win!</td>
+          </tr>
+          <tr> 
+          <td class="instructions-numbers">4</td>
+          <td class="instructions-text">See if you can score a winning streak!</td>
+          </tr>
+        </table>
+        <img src="https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/star.svg"/>
+      </div>
+    </div>
+
+    <div class="door-row">
+      <img id="door1" class="door-frame" 
+      src="https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg"/>
+      <img id="door2" class="door-frame"
+      src="https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg"/>
+      <img id="door3" class="door-frame"
+      src="https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg"/>
+    </div>
+
+    <section>
+      <div>
+        <div class="instructions-title">Hover City</div>
+        <div id="streakCounter" class="streak">Streak Counter: 0</div>
+        <div id="highestStreak" class="streakHigh"> Highest Streak: 0</div>
+        <div class="streakHigher"> Cool huh, hover</div>
+        <div id="start-row">Good Luck!</div>
+      </div>
+    </section>
+  </body>
+
+  <script>
+
+let doorImage1 = document.getElementById('door1');
+let doorImage2 = document.getElementById('door2');
+let doorImage3 = document.getElementById('door3');
+let startButton = document.getElementById('start-row');
+let streakCounter = document.getElementById('streakCounter');
+let highestStreak = document.getElementById('highestStreak');
+
+let botDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/robot.svg";
+let beachDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/beach.svg";
+let spaceDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/space.svg";
+let closedDoorPath = "https://s3.amazonaws.com/codecademy-content/projects/chore-door/images/closed_door.svg";
+
+let numClosedDoors = 3;
+let openDoor1;
+let openDoor2;
+let openDoor3;
+let currentlyPlaying = true;
+
+let currentStreak = 0;
+let bestStreak = 0;
+
+const isBot = (door) => {
+  if(door.src === botDoorPath) {
+    return true;
+  } else {
+    return false;
+      }
+    }
+const isClicked = (door) => {
+  if (door.src === closedDoorPath) {
+    return false;
+  } else {
+    return true;
+  }
+}
+
+const playDoor = (door) => {
+  numClosedDoors--;
+  if (numClosedDoors === 0) {
+    gameOver('win');
+    updateScore();
+    updateBestStreak();
+  } else if (isBot(door)) {
+    gameOver();
+    resetStreak();
+  }
+}
+
+const randomChoreDoorGenerator = () => {
+ choreDoor = Math.floor(Math.random() *numClosedDoors);
+   if (choreDoor === 0) {
+     openDoor1 = botDoorPath;
+     operDoor2 = beachDoorPath;
+     openDoor3 = spaceDoorPath;
+   } else if (choreDoor === 1) {
+     openDoor1 = spaceDoorPath;
+     openDoor2 = botDoorPath;
+     openDoor3 = beachDoorPath;
+   } else { (choreDoor === 2) 
+      openDoor1 = beachDoorPath;
+      openDoor2 = spaceDoorPath;
+      openDoor3 = botDoorPath;
+  }
+}
+
+
+door1.onclick = () => {
+ if(currentlyPlaying && !isClicked(doorImage1)) {
+ doorImage1.src=openDoor1; 
+ playDoor(doorImage1);}
+ }
+door2.onclick = () => {
+  if(currentlyPlaying && !isClicked(doorImage2)) {
+  doorImage2.src=openDoor2; 
+  playDoor(doorImage2);}
+  }
+door3.onclick = () => {
+  if(currentlyPlaying && !isClicked(doorImage3)) {
+  doorImage3.src=openDoor3; 
+  playDoor(doorImage3);}
+  }
+
+startButton.onclick = () => {
+    if (currentlyPlaying === false){
+    startRound();
+  }
+}
+
+const startRound = () => {
+  doorImage1.src = closedDoorPath;
+  doorImage2.src = closedDoorPath;
+  doorImage3.src = closedDoorPath;
+  numClosedDoors = 3;
+  startButton.innerHTML = 'Good luck!';
+  currentlyPlaying = true;
+  randomChoreDoorGenerator();
+}
+
+const updateScore = () => {
+  currentStreak++;
+  streakCounter.innerHTML = 'Current Streak: ' + currentStreak;
+}
+
+const updateBestStreak = () => {
+  if (currentStreak > bestStreak) {
+    bestStreak++;
+  }
+    highestStreak.innerHTML = 'Best Streak: ' + bestStreak;
+}
+
+const resetStreak = () => {
+  currentStreak = 0;
+  streakCounter.innerHTML = 'Current Streak: ' + currentStreak;
+  highestStreak.innerHTML = 'Best Streak: ' + bestStreak;
+}
+
+const gameOver = (status) => {
+  if (status === 'win') {
+    startButton.innerHTML = 'You win! <br> Play again?';
+  } else {
+    startButton.innerHTML = 'Game over!<br> Play again?';
+} 
+currentlyPlaying = false;
+}
+
+startRound();
+
+  </script>
+</html>
