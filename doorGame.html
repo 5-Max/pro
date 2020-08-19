@@ -145,6 +145,14 @@ body {
   background: #0c960c;
   background: linear-gradient(#0c960c, #0ebc0e);
   }
+.hover-city {
+  width: 250px;
+  height: 30px;
+  font-size: 2rem;
+  color: white;
+  opacity: .9;
+  text-align: center;
+  }
 .streak {
   width: 250px;
   height: 30px;
@@ -207,6 +215,69 @@ body {
   text-decoration: none;
   }
 
+  @media screen and (max-width: 800px) {
+    body {
+      width: 100%;
+      height: 100%;
+      font-size: 18px;
+    }
+    .header {
+      width: 375px;
+    }
+    .polling_message {
+      font-size: 1.5rem;
+      width: 300px;
+      color: white;
+    }
+    .title-row, .instructions-title, .instructions-row, .instructions-numbers, .instructions-text {
+      margin: 1px;
+      display: inline;
+    }
+    .instructions-title {
+      font-size: 1.3rem;
+    }
+    .instructions-text {
+      font-size: .6rem;
+      width: 100%;
+    }
+    .title-row img {
+      display: none;
+    }
+    .door-row, .door-frame {
+      width: auto;
+      height: 125px;
+      margin: 0px;
+      padding: 10px;
+      box-shadow: none;
+    }
+    .hover-city {
+      display: none;
+    }
+    #start-row {
+      width: 50%;
+      height: 50%;
+      font-size: .9rem;
+      text-shadow: none;
+      font-family: 'Roboto', sans-serif;
+    }
+    .streak  {
+     font-size: 1rem;
+     margin: 25px 0px 0px 0px;
+     padding: 0px;
+     text-decoration: none;
+     width: auto;
+    }
+    .streakHigher {
+      display: none;
+    }
+    .streakHigh {
+      font-size: 1rem;
+      margin: 0px 0px 0px 0px;
+      padding: 0px;
+      width: auto;
+      text-decoration: none;
+    }
+  }
   </style>
 </head>
 
@@ -236,7 +307,7 @@ body {
           </tr>
           <tr> 
             <td class="instructions-numbers">2</td>
-            <td class="instructions-text"> Your mission is to open all of the doors without running into the ChoreBot.</td>
+            <td class="instructions-text">Your mission is to open all of the doors without running into the ChoreBot.</td>
           </tr>
           <tr> 
           <td class="instructions-numbers">3</td>
@@ -262,9 +333,9 @@ body {
 
     <section>
       <div>
-        <div class="instructions-title">Hover City</div>
-        <div id="streakCounter" class="streak">Streak Counter: 0</div>
-        <div id="highestStreak" class="streakHigh"> Highest Streak: 0</div>
+        <div class="hover-city">Hover City</div>
+        <div id="streakCounter" class="streak">Current Streak: 0</div>
+        <div id="highestStreak" class="streakHigh">Best Streak: 0</div>
         <div class="streakHigher"> Cool huh, hover</div>
         <div id="start-row">Good Luck!</div>
       </div>
@@ -385,8 +456,8 @@ const updateBestStreak = () => {
 
 const resetStreak = () => {
   currentStreak = 0;
-  streakCounter.innerHTML = 'Current Streak: ' + currentStreak;
-  highestStreak.innerHTML = 'Best Streak: ' + bestStreak;
+  streakCounter.innerHTML = 'Current Streak:  ' + currentStreak;
+  highestStreak.innerHTML = 'Best Streak:  ' + bestStreak;
 }
 
 const gameOver = (status) => {
