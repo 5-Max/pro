@@ -395,7 +395,7 @@ const playDoor = (door) => {
 }
 
 const randomChoreDoorGenerator = () => {
- choreDoor = Math.floor(Math.random() *numClosedDoors);
+ const choreDoor = Math.floor(Math.random() *numClosedDoors);
    if (choreDoor === 0) {
      openDoor1 = botDoorPath;
      operDoor2 = beachDoorPath;
@@ -410,7 +410,6 @@ const randomChoreDoorGenerator = () => {
       openDoor3 = botDoorPath;
   }
 }
-
 
 door1.onclick = () => {
  if(currentlyPlaying && !isClicked(doorImage1)) {
