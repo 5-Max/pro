@@ -1,0 +1,175 @@
+/* 
+
+color wheel
+
+A      #A89B34
+B      #A8A26D
+C      #5C5732
+D      #6253A8
+E      #504C5E
+
+
+#B5A938 
+
+###                             
+#  #    # #####  ###### #    # 
+#  ##   # #    # #       #  #  
+#  # #  # #    # #####    ##   
+#  #  # # #    # #        ##   
+#  #   ## #    # #       #  #  
+### #    # #####  ###### #    # 
+*/
+* {
+  width: 100%;
+}
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+.makeSerif {
+  font-family: 'Noto Serif', serif;
+}
+
+.container-fluid {
+  background-color: #6253A8;
+}
+@-webkit-keyframes move_eye { from { margin-left: -55%; } to { margin-left: 130%; }  }
+@keyframes move_eye { from { margin-left: -55%; } to { margin-left: 130%; }  }
+
+.view_port {
+  background-color: transparent;
+  height: 125px;
+  width: 60%;
+  border-radius: 5px;
+  text-align: center;
+  margin: auto;
+  overflow: hidden;
+}
+.polling_message {
+  color: black;
+  float: left;
+  height: auto;
+  width: 100%;
+  font-size: 1.2rem;
+  z-index: 15;
+}
+.polling_message:hover {
+  z-index: 0;
+  color: red;
+}
+  @media screen and (max-width: 480px) {
+    .polling_message {
+      font-size: 1.5rem;
+      padding-top: 25px;
+      height: 50px;
+    }
+    .view_port {
+      height: 75px;
+    }
+  }
+.cylon_eye {
+  background-color:  #A89B34;
+  background-image: linear-gradient(to right,  #504C5E 25%, rgba(252, 219, 157, 1) 50%,  #504C5E 75%);
+  height: 100%;
+  width: 40%;
+  border-radius: 5px;
+  animation: 20s linear 0s infinite alternate move_eye;
+}
+.landing_font li {
+  font-size: 1.5rem;
+  align-items: center;
+}
+
+.logo-hover {
+  border-radius: 35px;
+  height: 75px;
+  width: auto;
+}
+.logo-hover:hover {
+  border-radius: 20px;
+  height: 250px;
+  width: auto;
+}
+
+.landing_image {
+  background-image: url("../styles/pics/de_camino_a_culebra.png"); 
+  width: 1187px;
+  max-width: 100%;
+  height: 930px;
+  max-height: 100%;
+  border-radius: 20px; 
+  border: 3px solid #504C5E; 
+  box-shadow: 15px 10px 30px #504C5E;
+  opacity: .7;
+}
+.landing_image:hover {
+  color: #c6a5cd26;
+  border-radius: 35px; 
+  opacity: .9;
+}
+footer {
+  background-color: #504C5E; 
+  color: #A89B34; 
+  font-size: .8rem;
+  overflow: hidden;
+}
+footer a svg {
+  color: white;
+  margin: 1px;
+  width: 20px;
+}
+nav a {
+  color: #817835;
+  font-size: 3rem;
+}
+footer a {
+  color: #d2c87d;
+  font-size: 2rem;
+}
+footer p {
+  height: 100vh;
+
+}
+
+/* About */
+
+.welcome-effect h5 {
+  animation: 25s linear 2s infinite alternate slidein;
+  animation-direction: normal;
+  @keyframes slidein {
+    from { transform: scaleX(1); }
+    to   { transform: scaleX(4); }
+  }
+} 
+
+/* Education */
+
+.carouselText a {
+  text-decoration: underline solid black; 
+  font-size: 1.2rem;
+  font-family: 'Noto Serif', serif;
+}
+.carouselText p {
+  font-size: .9rem; 
+  margin-top: -5px;
+}
+
+/* Projects */
+
+.card-img-top {
+  justify-items: center;
+  height: 190px;
+  width: 100%;
+}
+.card-carousel img {
+  justify-items: center;
+  height: 190px;
+  width: 100%;
+}
+.tryhackmeLink {
+  height: 145px;
+  margin: auto;
+  width: auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
