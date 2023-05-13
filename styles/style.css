@@ -137,34 +137,68 @@ footer a {
   color: #d2c87d;
   font-size: 2rem;
 }
-footer p {
-  height: 100vh;
-
-}
 
 /* About */
+
+.about-img {
+  width: 70%;
+  height: 50%;
+  margin: auto;
+  border-radius: 56px;
+  border: 2px solid #6253A8;
+  box-shadow: 9px 17px 20px;
+}
 
 .welcome-effect h5 {
   animation: 25s linear 2s infinite alternate slidein;
   animation-direction: normal;
+} 
   @keyframes slidein {
     from { transform: scaleX(1); }
     to   { transform: scaleX(4); }
   }
-} 
 
 /* Education */
 
 .carouselText a {
   text-decoration: underline solid black; 
-  font-size: 1.2rem;
+  font-size: 3.5rem;
   font-family: 'Noto Serif', serif;
 }
 .carouselText p {
-  font-size: .9rem; 
+  font-size: 1.2rem; 
   margin-top: -5px;
 }
+.carouselSize {
+  height: 800px; 
+  width: 800px; 
+  color: white;
+}
+@media screen and (max-width:480px) {
+  .carouselSize {
+    height: 300px; 
+    width: 300px; 
+  }
+  .carouselText a {
+    text-decoration: underline solid black; 
+    font-size: 1rem;
+    font-family: 'Noto Serif', serif;
+  }
+  .carouselText p {
+    font-size: .8rem; 
+    margin-top: -5px;
+  }
+  footer a {
+    padding: 10px;
+    font-size: 1rem;
+  }
+  footer p {
+    padding: 5px;
+    font-size: .6rem;
+  }
 
+}
+/* style="height: 150px; width: 100%; box-shadow: 10px 5px 5px #504C5E;" */
 /* Projects */
 
 .card-img-top {
