@@ -134,6 +134,9 @@ footer a svg {
   margin: 1px;
   width: 20px;
 }
+nav {
+  z-index: 55;
+}
 nav a {
   color: #817835;
   font-size: 3rem;
@@ -225,23 +228,30 @@ footer a {
   justify-content: center;
 }
 .music {
-  z-index: 22222;
+  z-index: 3;
   position: relative;
-  
 }
-/* body{background:#eee;font-family:Verdana, Helvetica, Arial, sans-serif;margin:0;padding:0} */
-.example{background:#FFF;border:0px #000 solid;margin: auto;padding: 20px;-moz-border-radius:1px;-webkit-border-radius:1px}
+@media screen and (max-width:480px) {
+.music{z-index: 1;}
+.example{}
+.kal_main{}
+.kal_cont {}
+.kal_cont .ks{display: none;}
+.navbar-toggler .nabar-toggler-icon{z-index: 88;}
+.kal_cont .ksc .s1 .s2 .s3 .s4 .s5 .s6 .s7 .s8 .s9 .s10 .s11 .s12{ display: none; z-index: 0;}
+}
+.example{background:#FFF;}
 /* common kaleidoscope styles */
-.kal_main{overflow:hidden;width:500px;height:500px;margin:0}
-.kal_cont{width:140%;height:140%;left:-20%;top:-20%;position:relative;margin:auto}
-.kal_cont .ks{
-  z-index: 1;
+.kal_main{overflow:hidden;}
+.kal_cont{width:auto;height:0%;left:0%;top:0%;position:relative;margin:0}
+.kal_cont .ks{opacity: .4;
+  z-index: 2;
 -webkit-transform-origin:right top;-moz-transform-origin:right top;-o-transform-origin:right top;transform-origin:right top;
-width:50%;height:50%;position:absolute;top:50%;left:0;z-index:10;overflow:hidden;
+width:60%;height:80%;top:80%;left:-10px;position:absolute;z-index:0;overflow:hidden;
 }
 .kal_cont .ksc{
-height:100%;width:100%;-webkit-transform:rotate(30deg);-moz-transform:rotate(30deg);-o-transform:rotate(30deg);transform:rotate(30deg);position:relative;-webkit-transform-origin:left top;-moz-transform-origin:left top;-o-transform-origin:left top;transform-origin:left top;left:100%;top:0;
-background-image:url(../styles/pics/de_camino_a_culebra.png)
+height:150%;width:150%;-webkit-transform:rotate(30deg);-moz-transform:rotate(30deg);-o-transform:rotate(30deg);transform:rotate(30deg);position:relative;-webkit-transform-origin:left top;-moz-transform-origin:left top;-o-transform-origin:left top;transform-origin:left top;left:50%;top:0;
+background-image:url(../styles/pics/de_camino_a_culebra.png);
 }
 /* styles for each sector */
 .kal_cont .s1 {

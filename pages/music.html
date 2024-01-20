@@ -10,16 +10,19 @@
     <title>Max's Page</title>
     <link href="../styles/style.css" rel="stylesheet" type="text/css" media="all" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Serif&display=swap" rel="stylesheet">
 </head>
 
-<body>
+<body class="bg-dark">
     <div id="header">
     </div>
-    <div class="container row">
-        <div class="example col-8">
+    <div class="container col-12">
+        <div class="example ">
             <div class="Kal_main">
                 <div class="kal_cont">
-                <div class="col-12 music">
+                    <div class="music">
                     <h1>Rock Latino</h1>
                     <h5>Rodrigo y Max</h5>
                     <figure>
@@ -64,6 +67,7 @@
             </div>
         </div>
     </div>
+
            
     
     <script>
@@ -73,11 +77,11 @@
             .removeClass()
             .addClass("nav-link active text-black fw-bold");
         });
-    $(".kal_cont").each(function(i){
-        $(this).mousemove(function(e) {
-            $(this).find(".ksc").each(function(i){
-                $(this).css({backgroundPosition: e.pageX+"px "+e.pageY+"px"});
-            });
+        $(".kal_cont").each(function(i){
+            $(this).mousemove(function(e) {
+                $(this).find(".ksc").each(function(i){
+                    $(this).css({backgroundPosition: e.pageX+"px "+e.pageY+"px"});
+                });
         });
     });
 });
