@@ -22,9 +22,41 @@
         <div class="example ">
             <div class="Kal_main">
                 <div class="kal_cont">
-                    <div class="music">
-                    <h1>Rock Latino</h1>
-                    <h5>Rodrigo y Max</h5>
+                    <div class="music text-white">
+                    <h1 class="text-center fs-1">EDM</h1>
+                    <h5 class="text-center fs-2">Music by Max</h5>
+                    <figure>
+                        <figcaption>Bamm</figcaption>
+                        <audio controls controlslist="noplaybackrate" src="../styles/pics/music/EDM/01 Bamm.mp3" type=""></audio>
+                    </figure>
+                    <figure>
+                        <figcaption>Orbiting Through Venus</figcaption>
+                        <audio controls controlslist="noplaybackrate" src="../styles/pics/music/EDM/02 Orbiting Through Venus.mp3" type=""></audio>
+                    </figure>
+                    <figure>
+                        <figcaption>Herbing Some Schiz</figcaption>
+                        <audio controls controlslist="noplaybackrate" src="../styles/pics/music/EDM/03 Herbing Some Schiz.mp3" type=""></audio>
+                    </figure>
+                    <figure>
+                        <figcaption>Whatever</figcaption>
+                        <audio controls controlslist="noplaybackrate" src="../styles/pics/music/EDM/04 Whatever.mp3" type=""></audio>
+                    </figure>
+                    <figure>
+                        <figcaption>Boodoo</figcaption>
+                        <audio controls controlslist="noplaybackrate" src="../styles/pics/music/EDM/05 Boodoo.mp3" type=""></audio>
+                    </figure>
+                    <figure>
+                        <figcaption>Drops</figcaption>
+                        <audio controls controlslist="noplaybackrate" src="../styles/pics/music/EDM/06 Drops.mp3" type=""></audio>
+                    </figure>
+                    <figure>
+                        <figcaption>InterStellar Traffic</figcaption>
+                        <audio controls controlslist="noplaybackrate" src="../styles/pics/music/EDM/08 InterStellar Traffic.mp3" type=""></audio>
+                    </figure>
+                    <br>
+                    <h1 class="text-center fs-1">Rock Latino</h1>
+                    <h5 class="text-center fs-2">Rodrigo y Max</h5>
+                    <p class="text-center fs-5">Lyrics by Rodrigo Music by Rodrigo & Max</p>
                     <figure>
                         <figcaption>Morena</figcaption>
                         <audio controls controlslist="noplaybackrate" src="../styles/pics/music/rodrigo_y_max/01 morena.mp3" type=""></audio>
@@ -45,49 +77,41 @@
                         <figcaption>Vividora (single)</figcaption>
                         <audio controls controlslist="noplaybackrate" src="../styles/pics/music/rodrigo_y_max/07 vividora.mp3"></audio>
                     </figure>
-                    <h1>Concert Music</h1>
-                    <h5>comming soon</h5>
-                    <h1>Electronic Music</h1>
-                    <h5>comming soon</h5>
-</div>
-                <div class="ks s1"><div class="ksc"></div></div>
-                <div class="ks s2"><div class="ksc"></div></div>
-                <div class="ks s3"><div class="ksc"></div></div>
-                <div class="ks s4"><div class="ksc"></div></div>
-                <div class="ks s5"><div class="ksc"></div></div>
-                <div class="ks s6"><div class="ksc"></div></div>
-                <div class="ks s7"><div class="ksc"></div></div>
-                <div class="ks s8"><div class="ksc"></div></div>
-                <div class="ks s9"><div class="ksc"></div></div>
-                <div class="ks s10"><div class="ksc"></div></div>
-                <div class="ks s11"><div class="ksc"></div></div>
-                <div class="ks s12"><div class="ksc"></div></div>
-                    
+                    </div>
+                    <div class="ks s1"><div class="ksc"></div></div>
+                    <div class="ks s2"><div class="ksc"></div></div>
+                    <div class="ks s3"><div class="ksc"></div></div>
+                    <div class="ks s4"><div class="ksc"></div></div>
+                    <div class="ks s5"><div class="ksc"></div></div>
+                    <div class="ks s6"><div class="ksc"></div></div>
+                    <div class="ks s7"><div class="ksc"></div></div>
+                    <div class="ks s8"><div class="ksc"></div></div>
+                    <div class="ks s9"><div class="ksc"></div></div>
+                    <div class="ks s10"><div class="ksc"></div></div>
+                    <div class="ks s11"><div class="ksc"></div></div>
+                    <div class="ks s12"><div class="ksc"></div></div>
                 </div>
             </div>
         </div>
     </div>
 
-           
-    
     <script>
         $(document).ready(function() {
             $("#header").load("./templates/header.html", () => {
-          $("#headerMusic")
-            .removeClass()
-            .addClass("nav-link active text-black fw-bold");
+                $("#headerMusic")
+                .removeClass()
+                .addClass("nav-link active text-black fw-bold");
+            });
         });
+    </script>
+    <script>
         $(".kal_cont").each(function(i){
             $(this).mousemove(function(e) {
                 $(this).find(".ksc").each(function(i){
-                    $(this).css({backgroundPosition: e.pageX+"px "+e.pageY+"px"});
+                    $(this).css({backgroundPosition: e.pageX + "px "+ e.pageY + "px"});
                 });
+            });
         });
-    });
-});
-    
-        
-    </script>
-   
+    </script>   
   </body>
 </html>

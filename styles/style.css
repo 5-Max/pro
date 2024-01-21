@@ -206,6 +206,9 @@ footer a {
   }
 
 }
+
+
+
 /* style="height: 150px; width: 100%; box-shadow: 10px 5px 5px #504C5E;" */
 /* Projects */
 
@@ -227,10 +230,16 @@ footer a {
   align-items: center;
   justify-content: center;
 }
+
+
+/* Music */
+
 .music {
   z-index: 3;
   position: relative;
 }
+
+/* Mobile trying to get hamburger to work and take out Kal on Mobile devices */
 @media screen and (max-width:480px) {
 .music{z-index: 1;}
 .example{}
@@ -240,14 +249,16 @@ footer a {
 .navbar-toggler .nabar-toggler-icon{z-index: 88;}
 .kal_cont .ksc .s1 .s2 .s3 .s4 .s5 .s6 .s7 .s8 .s9 .s10 .s11 .s12{ display: none; z-index: 0;}
 }
-.example{background:#FFF;}
+
+
+.example{background:#0a0a0a;}
 /* common kaleidoscope styles */
-.kal_main{overflow:hidden;}
-.kal_cont{width:auto;height:0%;left:0%;top:0%;position:relative;margin:0}
+.kal_main{overflow:hidden;width:20px;height:20px;margin:0;left:-20%;top:-20%}
+.kal_cont{width:auto;height:80%;left:80%;top:0%;margin:0}
 .kal_cont .ks{opacity: .4;
   z-index: 2;
 -webkit-transform-origin:right top;-moz-transform-origin:right top;-o-transform-origin:right top;transform-origin:right top;
-width:60%;height:80%;top:80%;left:-10px;position:absolute;z-index:0;overflow:hidden;
+width:60%;height:80%;top:80%;left:-155px;position:absolute;z-index:0;overflow:hidden;
 }
 .kal_cont .ksc{
 height:150%;width:150%;-webkit-transform:rotate(30deg);-moz-transform:rotate(30deg);-o-transform:rotate(30deg);transform:rotate(30deg);position:relative;-webkit-transform-origin:left top;-moz-transform-origin:left top;-o-transform-origin:left top;transform-origin:left top;left:50%;top:0;
@@ -326,3 +337,18 @@ background-image:url(../styles/pics/de_camino_a_culebra.png);
   -o-transform: rotate(330deg) matrix(-1,0,0,1,0,0);
   transform: rotate(330deg) matrix(-1,0,0,1,0,0);
 }
+
+/* body{background:#eee;font-family:Verdana, Helvetica, Arial, sans-serif;margin:0;padding:0}
+.example{background:#FFF;border:0px #000 solid;margin: auto;padding: 20px;-moz-border-radius:1px;-webkit-border-radius:1px}
+/* common kaleidoscope styles 
+.kal_main{overflow:hidden;width:500px;height:500px;margin:0}
+.kal_cont{width:140%;height:140%;left:-20%;top:-20%;position:relative;margin:auto}
+.kal_cont .ks{
+  z-index: 1;
+-webkit-transform-origin:right top;-moz-transform-origin:right top;-o-transform-origin:right top;transform-origin:right top;
+width:50%;height:50%;position:absolute;top:50%;left:0;z-index:10;overflow:hidden;
+}
+.kal_cont .ksc{
+height:100%;width:100%;-webkit-transform:rotate(30deg);-moz-transform:rotate(30deg);-o-transform:rotate(30deg);transform:rotate(30deg);position:relative;-webkit-transform-origin:left top;-moz-transform-origin:left top;-o-transform-origin:left top;transform-origin:left top;left:100%;top:0;
+background-image:url(../styles/pics/de_camino_a_culebra.png)
+} */
