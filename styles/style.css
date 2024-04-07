@@ -11,19 +11,27 @@ E      #504C5E
 
 #B5A938 
 
-###                             
-#  #    # #####  ###### #    # 
-#  ##   # #    # #       #  #  
-#  # #  # #    # #####    ##   
-#  #  # # #    # #        ##   
-#  #   ## #    # #       #  #  
-### #    # #####  ###### #    # 
+ascii art = universe
+
+88                        88                           
+88                        88                           
+88                        88                           
+88  8b,dPPYba,    ,adPPYb,88   ,adPPYba,  8b,     ,d8  
+88  88P'   `"8a  a8"    `Y88  a8P_____88   `Y8, ,8P'   
+88  88       88  8b       88  8PP"""""""     )888(     
+88  88       88  "8a,   ,d88  "8b,   ,aa   ,d8" "8b,   
+88  88       88   `"8bbdP"Y8   `"Ybbd8"'  8P'     `Y8  
+                                                       
 */
 * {
   width: 100%;
 }
 body {
   font-family: 'Noto Sans', sans-serif;
+}
+.header {
+  display: flex;
+  justify-content: space-around;
 }
 .makeSerif {
   font-family: 'Noto Serif', serif;
@@ -123,34 +131,23 @@ body {
   border-radius: 35px; 
   opacity: .9;
 }
-footer {
-  background-color: #504C5E; 
-  color: #A89B34; 
-  font-size: .8rem;
+
+/* 
+       db         88                                              
+      d88b        88                                       ,d     
+     d8'`8b       88                                       88     
+    d8'  `8b      88,dPPYba,    ,adPPYba,   88       88  MM88MMM  
+   d8YaaaaY8b     88P'    "8a  a8"     "8a  88       88    88     
+  d8""""""""8b    88       d8  8b       d8  88       88    88     
+ d8'        `8b   88b,   ,a8"  "8a,   ,a8"  "8a,   ,a88    88,    
+d8'          `8b  8Y"Ybbd8"'    `"YbbdP"'    `"YbbdP'Y8    "Y888
+*/
+.body-about {
   overflow: hidden;
 }
-footer a svg {
-  color: white;
-  margin: 1px;
-  width: 20px;
-}
-nav {
-  z-index: 55;
-}
-nav a {
-  color: #817835;
-  font-size: 3rem;
-}
-footer a {
-  color: #d2c87d;
-  font-size: 2rem;
-}
-
-/* About */
-
 .about-img {
-  width: 70%;
-  height: 50%;
+  width: 500px;
+  height: 400px;
   margin: auto;
   border-radius: 56px;
   border: 2px solid #6253A8;
@@ -166,26 +163,76 @@ footer a {
     to   { transform: scaleX(4); }
   }
 
-/* Education */
+@media screen and (max-width:480px) {
+  .body-about {
+    overflow: visible;
+  }
+}
+/*  Education 
+88888888888          88                                                88                            
+88                   88                                         ,d     ""                            
+88                   88                                         88                                   
+88aaaaa      ,adPPYb,88  88       88   ,adPPYba,  ,adPPYYba,  MM88MMM  88   ,adPPYba,   8b,dPPYba,   
+88"""""     a8"    `Y88  88       88  a8"     ""  ""     `Y8    88     88  a8"     "8a  88P'   `"8a  
+88          8b       88  88       88  8b          ,adPPPPP88    88     88  8b       d8  88       88  
+88          "8a,   ,d88  "8a,   ,a88  "8a,   ,aa  88,    ,88    88,    88  "8a,   ,a8"  88       88  
+88888888888  `"8bbdP"Y8   `"YbbdP'Y8   `"Ybbd8"'  `"8bbdP"Y8    "Y888  88   `"YbbdP"'   88       88 
+
+*/
 
 .carouselText a {
-  text-decoration: underline solid black; 
-  font-size: 3.5rem;
+  text-decoration: underline solid rgb(58, 35, 172); 
+  color: #0a0a0a;
   font-family: 'Noto Serif', serif;
+  font-size: 2rem;
+}
+.carouselText a:hover {
+ color: rgb(110, 116, 170);
+ text-decoration: underline dashed rgb(56, 11, 192); 
 }
 .carouselText p {
-  font-size: 1.2rem; 
-  margin-top: -5px;
+  color: #bab3db;
+  font-size: .9rem;
 }
 .carouselSize {
-  height: 800px; 
-  width: 800px; 
-  color: white;
+  height: 100%; 
+  width: 50%; 
+  padding-bottom: 30px;
 }
+.carousel-control-prev {
+  left: 150px;
+}
+.carousel-control-next {
+  right: 150px;
+}
+.card-img img {
+  height: 300px;
+  width: 300px;
+}
+.footer-edu {
+  font-family: 'Noto Serif', serif;
+  text-align: center;
+  margin: auto;
+
+
+}
+.footer-edu a:hover {
+  color: yellow;
+}
+.footer-edu svg:hover {
+  fill: rgb(21, 7, 80);
+}
+
+
 @media screen and (max-width:480px) {
+  .header {
+    display: block;
+  }
+
   .carouselSize {
-    height: 300px; 
-    width: 300px; 
+    padding-top: 15px;
+    height: 350px; 
+    width: 250px; 
   }
   .carouselText a {
     text-decoration: underline solid black; 
@@ -193,24 +240,39 @@ footer a {
     font-family: 'Noto Serif', serif;
   }
   .carouselText p {
-    font-size: .8rem; 
-    margin-top: -5px;
+    font-size: .7rem; 
+    margin-top: 0px;
   }
-  footer a {
-    padding: 10px;
-    font-size: 1rem;
+  .carousel-control-prev {
+    left: 0;
   }
-  footer p {
-    padding: 5px;
-    font-size: .6rem;
+  .carousel-control-next {
+    right: 0;
   }
+  .card-img img {
+    height: 200px;
+    width: 200px;
+  }
+
 
 }
 
 
 
 /* style="height: 150px; width: 100%; box-shadow: 10px 5px 5px #504C5E;" */
-/* Projects */
+/* Projects 
+88888888ba                            88                                              
+88      "8b                           ""                            ,d                
+88      ,8P                                                         88                
+88aaaaaa8P'  8b,dPPYba,   ,adPPYba,   88   ,adPPYba,   ,adPPYba,  MM88MMM  ,adPPYba,  
+88""""""'    88P'   "Y8  a8"     "8a  88  a8P_____88  a8"     ""    88     I8[    ""  
+88           88          8b       d8  88  8PP"""""""  8b            88      `"Y8ba,   
+88           88          "8a,   ,a8"  88  "8b,   ,aa  "8a,   ,aa    88,    aa    ]8I  
+88           88           `"YbbdP"'   88   `"Ybbd8"'   `"Ybbd8"'    "Y888  `"YbbdP"'  
+                                     ,88                                              
+                                   888P"                                              
+
+*/
 
 .card-img-top {
   justify-items: center;
@@ -222,38 +284,56 @@ footer a {
   height: 190px;
   width: 100%;
 }
-.tryhackmeLink {
-  height: 145px;
-  margin: auto;
-  width: auto;
+
+#tryhackmeLink {
+  height: 190px;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 
-/* Music */
+/* Music 
+88b           d88                          88              
+888b         d888                          ""              
+88`8b       d8'88                                          
+88 `8b     d8' 88  88       88  ,adPPYba,  88   ,adPPYba,  
+88  `8b   d8'  88  88       88  I8[    ""  88  a8"     ""  
+88   `8b d8'   88  88       88   `"Y8ba,   88  8b          
+88    `888'    88  "8a,   ,a88  aa    ]8I  88  "8a,   ,aa  
+88     `8'     88   `"YbbdP'Y8  `"YbbdP"'  88   `"Ybbd8"'  
+
+*/
+
 
 .music {
   z-index: 3;
   position: relative;
+  opacity: 1;
 }
 
 /* Mobile trying to get hamburger to work and take out Kal on Mobile devices */
 @media screen and (max-width:480px) {
-.music{z-index: 1;}
+.music{
+  z-index: 9999;
+  opacity: 9;
+}
+.music-mobile {
+  z-index: 3;
+  position: relative;
+}
 .example{}
-.kal_main{}
-.kal_cont {}
-.kal_cont .ks{display: none;}
-.navbar-toggler .nabar-toggler-icon{z-index: 88;}
-.kal_cont .ksc .s1 .s2 .s3 .s4 .s5 .s6 .s7 .s8 .s9 .s10 .s11 .s12{ display: none; z-index: 0;}
+.kal_main{width: auto; height: auto; left: 0; height: 0; -webkit-transform: none;}
+.kal_cont {height: auto; left: 0; top: auto;}
+.kal_cont .ks .ksc{z-index: 0;display: none;}
+.kal_cont .ksc .s1 .s2 .s3 .s4 .s5 .s6 .s7 .s8 .s9 .s10 .s11 .s12{width: auto; height: auto; left: 0;position: relative;}
+
 }
 
-
-.example{background:#0a0a0a;}
+.example{z-index: 1;}
 /* common kaleidoscope styles */
-.kal_main{overflow:hidden;width:20px;height:20px;margin:0;left:-20%;top:-20%}
+.kal_main{overflow:hidden;width:20px;height:20px;margin:0;left:-20%;top:-20%;opacity:1;}
 .kal_cont{width:auto;height:80%;left:80%;top:0%;margin:0}
 .kal_cont .ks{opacity: .4;
   z-index: 2;
@@ -261,7 +341,7 @@ footer a {
 width:60%;height:80%;top:80%;left:-155px;position:absolute;z-index:0;overflow:hidden;
 }
 .kal_cont .ksc{
-height:150%;width:150%;-webkit-transform:rotate(30deg);-moz-transform:rotate(30deg);-o-transform:rotate(30deg);transform:rotate(30deg);position:relative;-webkit-transform-origin:left top;-moz-transform-origin:left top;-o-transform-origin:left top;transform-origin:left top;left:50%;top:0;
+height:90%;width:150%;-webkit-transform:rotate(30deg);-moz-transform:rotate(30deg);-o-transform:rotate(30deg);transform:rotate(30deg);position:relative;-webkit-transform-origin:left top;-moz-transform-origin:left top;-o-transform-origin:left top;transform-origin:left top;left:50%;top:0;
 background-image:url(../styles/pics/de_camino_a_culebra.png);
 }
 /* styles for each sector */
